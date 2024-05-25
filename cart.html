@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Your Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stylescart.css">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <!------------------------------------ NAV MENU START ------------------------------->
+    <a href="#"><i class="fa-solid fa-angle-up backToTop" id="backToTop"></i></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="./index.html" target="blank">
+            <span class="fa-stack fa-1x">
+                <i class="fa-solid fa-square fa-2x fa-stack-2x"></i>
+                <i class="fa-solid fa-l fa-stack-1x fa-inverse"></i>
+            </span><span class="brand-name">ets Eat</span></a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerSmallScreen" aria-controls="navbarTogglerSmallScreen" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerSmallScreen">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./veg.html">Veg </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./nonveg.html">Non-Veg</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link cart-link" href="#"><i class="fa-solid fa-cart-shopping cart" id="cart"></i><span
+                            class='badge badge-warning' id='lblCartCount'> 0 </span><span
+                            class="sr-only">(current)></span></a>
+                    <!-- <i class="fa-solid fa-cart-circle-exclamation"></i> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!------------------------------------ NAV MENU END ------------------------------->
+    <!------------------------------------ HEADING START ------------------------------->
+    <div class="container-fluid">
+        <h3 class="aboutus-title">Your Order</h3>
+    </div>
+    <!------------------------------------ HEADING END ------------------------------->
+    <!------------------------------------ ITEM LIST START ------------------------------->
+    <div class="container-fluid orderList" id="orderList">
+        <div class="card bg-dark text-white">
+            <div class="row">
+                <div class="col-md-2 col-sm-3 central">
+                    <p>Item image</p>
+                </div>
+                <div class="col-md-3 col-sm-3 central">
+                    <p>Item description</p>
+                </div>
+                <div class="col-md-2 col-sm-2 central">
+                    <p>Category</p>
+                </div>
+                <div class="col-md-3 col-sm-2 central">
+                    <p>Item quantity</p>
+                </div>
+                <div class="col-md-2 col-sm-2 central">
+                    <p>Item Cost(in Rs.)</p>
+                </div>
+            </div>
+        </div>
+        <div id="wrapper">
+
+        </div>
+    </div>
+    <!------------------------------------ ITEM LIST END ------------------------------->
+    <!------------------------------------ ALERT START ------------------------------->
+    <div class="container-fluid mt-2" id="noitem" class="noitem">
+        <div class="alert alert-danger" role="alert">
+            There is no item in your cart. Consider ordering something.
+        </div>
+    </div>
+    <!------------------------------------ ALERT END ------------------------------->
+    <!------------------------------------ TOTAL ROW START ------------------------------->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7 col-sm-6">
+
+            </div>
+            <div class="col-md-2 col-sm-3">
+                <p class="total" id="totalquantity">Total : 0</p>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <p class="total" id="total">Total : Rs.0</p>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------ TOTAL ROW END ------------------------------->
+    <!------------------------------------ FIRST MODAL START ------------------------------->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modBody">
+                    Are you sure you want to order this
+                    Once ordered the list cannot be changed
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="payButton">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="noButton">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------ FIRST MODAL END ------------------------------->
+    <div class="container-fluid btn">
+        <button class="btn btn-warning" data-dismiss="alert" onclick="submitOrder()">Confirm Order</button>
+    </div>
+    <!------------------------------------ SECOND MODAL START ------------------------------->
+    <div class="container-fluid" id="printThis">
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl invoicemodal" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modTitle2">Your Orders</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body invoicemodalbody" id="modBody2" >
+                        <div class="container-fluid heading">
+                            <div class="row">
+                                <div class="col-md col-sm">
+
+                                </div>
+                                <div class="col-md col-sm company-details">
+                                    <h2>Lets Eat</h2>
+                                    <p>71B R.K. Chatterjee Lane</p>
+                                    <p>Kasba Bakultala, Kol-041</p>
+                                    <p>(+91)9988776655</p>
+                                    <p>swapnilchowdhury00@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row contacts">
+                                <div class="col-md col-sm" id="custcontacts">
+
+                                </div>
+                                <div class="col-md col-sm" id="invoicedetails">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid ordertable">
+                            <table class="table table-warning table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>Cost(in Rs.)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordertable">
+
+                                </tbody>
+                                <tfooter>
+                                    <tr>
+                                        <th colspan="2" class="right">TOTAL :</th>
+                                        <td id="totalq"></td>
+                                        <td id="totalc"></td>
+                                    </tr>
+                                </tfooter>
+                            </table>
+                        </div>
+                        <div class="thanks">
+                            &#127828; THANK YOU! &#127828;
+                            <!--&#128151;-->
+                        </div>
+                        <div class="footerm">
+                            This is automatic generated invoice. No signature is required.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" id="printButton">Print</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------ SECOND MODAL END ------------------------------->
+    <!------------------------------------ FOOTER START ------------------------------->
+    <footer>
+        <div class="mbr-overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p class="footname">Lets Eat Restaurant</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="followus"><u>FOLLOW US</u></h4>
+                    <span class="icons">
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg icon-facebook">
+                                <a href="https://www.facebook.com/home.php" target="blank">
+                                    <i class="fa fa-square fa-stack-2x icon-white icon-fb"></i>
+                                    <i
+                                        class="fa fa-brands fa-facebook-square fa-stack-1x icon-fb2 icon-darkblue"></i></a>
+                            </span>
+                            <span class="tooltiptext2">Facebook</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://www.instagram.com/instagram/?hl=en" target="blank" class="followicon">
+                                    <i class="fa fa-brands fa-instagram icon-white icon-grad icon-ins"></i>
+                                </a>
+                            </span>
+                            <span class="tooltiptext2">Instagram</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://twitter.com/explore" target="blank" class="followicon">
+                                    <i class="fa fa-square fa-stack-2x icon-white"></i>
+                                    <i class="fa fa-brands fa-twitter fa-stack-1x icon-twt icon-skyblue"></i></a>
+                            </span>
+                            <span class="tooltiptext2">Twitter</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://www.youtube.com/" target="blank" class="followicon">
+                                    <i class="fa fa-square fa-stack-2x  icon-white"></i>
+                                    <i class="fa fa-brands fa-youtube fa-stack-1x icon-big icon-red"></i></a>
+                            </span>
+                            <span class="tooltiptext2">YouTube</span>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-4">
+                    <ul class="list-group footerlinks">
+                        <li class="links"><a href="#">Top</a></li>
+                        <li class="links"><a href="./index.html">Home</a></li>
+                        <li class="links"><a href="./veg.html">Veg</a></li>
+                        <li class="links"><a href="./nonveg.html">NonVeg</a></li>
+                    </ul>
+                </div>
+                <div class="col-4 text-left">
+                    <p class="followus"><u>Open Hours</u></p>
+                    <p class="followus">Monday-Friday : 08:00am to 11:00pm</p>
+                    <p class="followus">Saturday : 10:00am to 10:00pm</p>
+                    <p class="followus">Sunday : Closed</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright">&#169;Copyright 2022. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!------------------------------------ FOOTER START ------------------------------->
+    <script src="./js/appcart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lets Eat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+</head>
+
+<body>
+    <!----------------------------------------- NAVIGATION BAR START ----------------------------->
+    <a href="#"><i class="fa-solid fa-angle-up backToTop" id="backToTop"></i></a>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <span class="fa-stack fa-1x">
+                <i class="fa-solid fa-square fa-2x fa-stack-2x"></i>
+                <i class="fa-solid fa-l fa-stack-1x fa-inverse"></i>
+            </span><span class="brand-name">ets Eat</span></a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerSmallScreen" aria-controls="navbarTogglerSmallScreen" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerSmallScreen">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link active-page" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./veg.html" target="blank" id="veglink">Veg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./nonveg.html" target="blank" id="nonveglink">Non-Veg</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cart-link" href="./cart.html" target="blank" id="cartlink"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                    <!-- <i class="fa-solid fa-cart-circle-exclamation"></i> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!----------------------------------------- NAVIGATION BAR END ----------------------------->
+    <!----------------------------------------- CAROUSEL START ---------------------------------->
+    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active landing-image">
+                <div class="slides">
+                    <img class="d-block w-100 img1" src="./images/f11.jpg" alt="First slide">
+                </div>
+                <div class="hero">
+                    <hgroup class="slide1">
+                        <h1>Welcome to our Restaurant</h1>
+                        <h2>We hope you will like our dishes</h2>
+                    </hgroup>
+                    <a href="#menu"><button class="btn btn-warning herobutton" style="font-size: 25px;">See
+                            Menu</button></a>
+                </div>
+            </div>
+
+            <div class="carousel-item landing-images">
+                <div class="slides">
+                    <img class="d-block w-100 img2" src="./images/f2.jpg" alt="Second slide">
+                </div>
+                <div class="hero">
+                    <hgroup class="slide2">
+                        <h1>We serve best quality dishes</h1>
+                        <h2>Because of highly qualified chefs</h2>
+                    </hgroup>
+                    <a href="#abouts"><button class="btn btn-warning herobutton" style="font-size: 25px;">About
+                            Us</button></a>
+                </div>
+            </div>
+            <div class="carousel-item landing-images">
+                <img class="d-block w-100 img3" src="./images/f3.jpg" alt="Third slide">
+                <div class="hero">
+                    <hgroup class="slide3">
+                        <h1>Have any questions</h1>
+                        <h2>Or want to comment something</h2>
+                    </hgroup>
+                    <a href="#contacts"><button class="btn btn-warning herobutton" style="font-size: 25px;">Contact
+                            Us</button></a>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!----------------------------------------- CAROUSEL END --------------------------------->
+    <!----------------------------------- MENU CARD START -------------------------------------->
+    <div class="container-fluid" id="menu">
+        <h2 class="aboutus-title">Menu</h2>
+        <div class="row">
+            <div class="col-6">
+                <div class="card h-100 bg-light border-success">
+                    <img class="card-img-top" src="./images/vegFood.jpeg" alt="Veg Food">
+                    <div class="card-body text-success">
+                        <h4 class="card-title"><u>Veg Menu</u></h4>
+                        <ol class="food-menu" id="vmenu">
+                            <!-- <li class="card-text food-details">
+                                <span class="foodname">Paneer</span>
+                                <span class="foodcost badge badge-secondary">Rs.100</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Paneer</span>
+                                <span class="foodcost badge badge-secondary">Rs.100</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Paneer</span>
+                                <span class="foodcost badge badge-secondary">Rs.100</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Paneer</span>
+                                <span class="foodcost badge badge-secondary">Rs.100</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Paneer</span>
+                                <span class="foodcost badge badge-secondary">Rs.100</span>
+                            </li> -->
+                        </ol>
+                        <a href="./veg.html" class="btn btn-outline-success" target="blank">Order Something</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card h-100 bg-light border-danger">
+                    <img class="card-img-top" src="./images/nonveg.png" alt="Non Veg Food">
+                    <div class="card-body text-danger">
+                        <h4 class="card-title"><u>Non-Veg Menu</u></h4>
+                        <ol class="food-menu" id="nvmenu">
+                            <!-- <li class="card-text food-details">
+                                <span class="foodname">Chicken</span>
+                                <span class="foodcost badge badge-secondary">Rs.200</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Chicken</span>
+                                <span class="foodcost badge badge-secondary">Rs.200</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Chicken</span>
+                                <span class="foodcost badge badge-secondary">Rs.200</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Chicken</span>
+                                <span class="foodcost badge badge-secondary">Rs.200</span>
+                            </li>
+                            <li class="card-text food-details">
+                                <span class="foodname">Chicken</span>
+                                <span class="foodcost badge badge-secondary">Rs.200</span>
+                            </li> -->
+                        </ol>
+                        <!-- <div class="card-footer bg-light" style="border:none;vertical-align: bottom;"> -->
+                            <a href="./nonveg.html" class="btn btn-outline-danger" target="blank">Order Something</a>
+                        <!-- </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------- MENU CARD END ------------------------------------------>
+    <!------------------------------------- ABOUT US START ------------------------------------------>
+    <div class="container-fluid" id="abouts">
+        <h2 class="aboutus-title">ABOUT US</h2>
+        <div class="row">
+            <div class="col-7">
+                <p class="aboutus-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quae,
+                    voluptates quod velit hic at consequatur labore autem cum eius consectetur suscipit placeat eveniet
+                    asperiores earum praesentium illo ab dignissimos!Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Debitis quae,
+                    voluptates quod velit hic at consequatur labore autem cum eius consectetur suscipit placeat eveniet
+                    asperiores earum praesentium illo ab dignissimos!Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Debitis quae,
+                    voluptates quod velit hic at consequatur labore autem cum eius consectetur suscipit placeat eveniet
+                    asperiores earum praesentium illo ab dignissimos!Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Debitis quae,
+                    voluptates quod velit hic at consequatur labore autem cum eius consectetur suscipit placeat eveniet
+                    asperiores earum praesentium illo ab dignissimos!Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Debitis quae,
+                    voluptates quod velit hic at consequatur labore autem cum eius consectetur suscipit placeat eveniet
+                    asperiores earum praesentium illo ab dignissimos!</p>
+            </div>
+            <div class="col-5 text-center">
+                <img class="aboutus-img" src="images/ab1.jpg" alt="Cooking">
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------- ABOUT US END ---------------------------------------------->
+    <!------------------------------------- CONTACT US START -------------------------------------------->
+    <div class="container-fluid" id="contacts">
+        <h2 class="aboutus-title">CONTACT US</h2>
+        <div class="row">
+            <div class="col-4 text-center">
+                <div class="card bg-light color-back menuitem">
+                    <p class=""><i class="contact-icon fa-solid fa-phone fa-3x icon-white"></i></p>
+                    <p class="contact-type">CALL US</p>
+                    <p class="contact-details"><a href="tel:+917596852481" target="blank">(+91)9988776655</a></p>
+                </div>
+
+            </div>
+            <div class="col-4 text-center">
+                <div class="card bg-light color-back menuitem">
+                    <p class=""><i class="contact-icon fa-solid fa-location-dot fa-3x icon-white"></i></p>
+                    <p class="contact-type">FIND US</p>
+                    <p class="contact-details"><a href="https://goo.gl/maps/YY3zimCMziBJayWC8" target="blank">71B R.K.
+                            Chatterjee Lane</a></p>
+                </div>
+            </div>
+            <div class="col-4 text-center">
+                <div class="card bg-light color-back menuitem">
+                    <p class=""><i class="contact-icon fa-solid fa-envelope fa-3x icon-white"></i></p>
+                    <p class="contact-type">MAIL US</p>
+                    <p class="contact-details"><a href="mailto:swapnilchowdhury00@gmail.com"
+                            target="blank">swapnilchowdhury00@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <h3 class="aboutus-title">Provide any feedback</h3 >
+        <div class="row">
+            <div class="col-6">
+                <form name="review" id="review">
+                    <label for="name" style="display:block">Name<sup class="mandatory">*</sup></label>
+                    <input type="text" id="name" placeholder="Full Name" class="form-control" onkeyup="validateName();"
+                        required>
+                    <p id="nameWarn" class="warning">Required field</p>
+                    <label for="emailID" style="display:block">Email-ID<sup class="mandatory">*</sup></label>
+                    <input type="email" id="emailID" placeholder="Email-ID" class="form-control"
+                        onkeyup="validateEmail();" required>
+                    <p id="emailWarn" class="warning">Required field</p>
+                    <label for="textReview" style="display:block">Comments</label>
+                    <textarea id="textReview" name="review" form="review" placeholder="Write Something to us" rows="6"
+                        class="form-control"></textarea>
+                    <input type="submit" value="Submit" class="btn btn-warning submitButton" id="submitButton"
+                        onclick="return validate();">
+                </form>
+            </div>
+            <div class="col-6 text-center">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14742.403425397837!2d88.380899!3d22.519154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe0b7b92b59dd4b42!2sKasba%20-%20Bakultala!5e0!3m2!1sen!2sin!4v1659590129885!5m2!1sen!2sin"
+                    width="650" height="470" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" alt="map"></iframe>
+            </div>
+        </div>
+    </div>
+    <!------------------------------------- CONTACT US END --------------------------------------------->
+    <!------------------------------------- FOOTER START --------------------------------------------->
+    <footer>
+        <div class="mbr-overlay"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p class="footname">Lets Eat Restaurant</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="followus"><u>FOLLOW US</u></h4>
+                    <span class="icons">
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg icon-facebook">
+                                <a href="https://www.facebook.com/home.php" target="blank">
+                                    <i class="fa fa-square fa-stack-2x icon-white icon-fb"></i>
+                                    <i
+                                        class="fa fa-brands fa-facebook-square fa-stack-1x icon-fb2 icon-darkblue"></i></a>
+                            </span>
+                            <span class="tooltiptext2">Facebook</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://www.instagram.com/instagram/?hl=en" target="blank" class="followicon">
+                                    <i class="fa fa-brands fa-instagram icon-white icon-grad icon-ins"></i>
+                                </a>
+                            </span>
+                            <span class="tooltiptext2">Instagram</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://twitter.com/explore" target="blank" class="followicon">
+                                    <i class="fa fa-square fa-stack-2x icon-white"></i>
+                                    <i class="fa fa-brands fa-twitter fa-stack-1x icon-twt icon-skyblue"></i></a>
+                            </span>
+                            <span class="tooltiptext2">Twitter</span>
+                        </span>
+
+                        <span class="tooltip1">
+                            <span class="fa-stack fa-lg">
+                                <a href="https://www.youtube.com/" target="blank" class="followicon">
+                                    <i class="fa fa-square fa-stack-2x  icon-white"></i>
+                                    <i class="fa fa-brands fa-youtube fa-stack-1x icon-big icon-red"></i></a>
+                            </span>
+                            <span class="tooltiptext2">YouTube</span>
+                        </span>
+                    </span>
+                </div>
+                <div class="col-4">
+                    <ul class="list-group footerlinks">
+                        <li class="links"><a href="#">Home</a></li>
+                        <li class="links"><a href="#menu">Menu</a></li>
+                        <li class="links"><a href="#abouts">AboutUs</a></li>
+                        <li class="links"><a href="#contacts">ContactUs</a></li>
+                    </ul>
+                </div>
+                <div class="col-4 text-left">
+                    <p class="followus"><u>Open Hours</u></p>
+                    <p class="followus">Monday-Friday : 08:00am to 11:00pm</p>
+                    <p class="followus">Saturday : 10:00am to 10:00pm</p>
+                    <p class="followus">Sunday : Closed</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p class="copyright">&#169;Copyright 2022. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!------------------------------------- FOOTER END --------------------------------------------->
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
